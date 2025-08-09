@@ -116,3 +116,6 @@ function CalTaxAmount(AmountTobeTax, ExchRate){
 
 
 
+function refreshpage(){
+    location.reload();
+}
