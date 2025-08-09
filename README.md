@@ -6,6 +6,7 @@ Click to Preview:
             
 - High School Grade Calculator – Calculate scores to determine student grades https://hongly21.github.io/Employee_system_Js/Grade_cal.html
   
-- convert Gb to Mb : https://hongly21.github.io/Employee_system_Js/Gb_to_Mb.html
+- convert Gb to Mb -
+  https://hongly21.github.io/Employee_system_Js/Gb_to_Mb.html
 
 These exercises helped me understand how JavaScript functions work and how to use arrays effectively.
