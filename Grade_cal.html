@@ -1,95 +1,272 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="syste.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            padding: 20px;
+        }
+
+        /* Header Section */
+        .Header-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .Header-container h1 {
+            font-size: 2rem;
+            color: #2c3e50;
+        }
+
+        .Header-container p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* Main Container */
+        .full-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        /* Left Side: Input Form */
+        .full-container-left {
+            flex: 1;
+            min-width: 300px;
+            max-width: 400px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        #input-container label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        #input-container input[type="text"],
+        #input-container input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        #input-container h1 {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #34495e;
+        }
+
+        #btn {
+            margin-top: 20px;
+            width: 100%;
+            padding: 10px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        #btn:hover {
+            background-color: #2980b9;
+        }
+
+        /* Right Side: Results */
+        .full-container-right {
+            flex: 1;
+            min-width: 300px;
+            max-width: 600px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Result Table */
+        #table-result {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        #table-result th,
+        #table-result td {
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        #table-result th {
+            background-color: #ecf0f1;
+            color: #2c3e50;
+        }
+
+        #table-result td {
+            background-color: #f9f9f9;
+        }
+
+        /* Buttons */
+        .btn1 {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .btn1 input[type="button"] {
+            flex: 1;
+            padding: 10px;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .btn1 input[type="button"]:hover {
+            background-color: #1e8449;
+        }
+
+        /* Total Result Table */
+        #result-total-table {
+            margin-top: 20px;
+            overflow-x: auto;
+        }
+
+        #result-total-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        #result-total-table th,
+        #result-total-table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+
+        #result-total-table th {
+            background-color: #bdc3c7;
+            color: #2c3e50;
+        }
+
+        #result-total-table td {
+            background-color: #fdfdfd;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .full-container {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
+
 <body>
     <div class="Header-container">
         <h1>Welcome to Grade Calculator</h1>
         <p>This system will help you calculate your grade.</p>
     </div>
- 
+
     <div class="full-container">
         <div class="full-container-left">
-        <div id="input-container">
-        <label for="">Name:</label>
-        <input type="text" id="name" placeholder="Enter Your Name">
-        <h1>Subject</h1>
-        <label for="">Math:</label>
-        <input type="number" id="math" placeholder="Enter Your Score">
-        <label for="">Biology:</label>
-        <input type="number" id="biology" placeholder="Enter Your Score">
-        <label for="">Chemistry:</label>
-        <input type="number" id="chmistry" placeholder="Enter Your Score">
-        <label for="">Physical:</label>
-        <input type="number" id="physical" placeholder="Enter Your Score">
-        <label for="">English:</label>
-        <input type="number" id="english" placeholder="Enter Your Score">
-        <label for="">History:</label>
-        <input type="number" id="history" placeholder="Enter Your Score">
-        <label for="">Khmer:</label>
-        <input type="number" id="khmer" placeholder="Enter Your Score">
-        <input type="button" id="btn" value="Go">
+            <div id="input-container">
+                <label for="">Name:</label>
+                <input type="text" id="name" placeholder="Enter Your Name">
+                <h1>Subject</h1>
+                <label for="">Math:</label>
+                <input type="number" id="math" placeholder="Enter Your Score">
+                <label for="">Biology:</label>
+                <input type="number" id="biology" placeholder="Enter Your Score">
+                <label for="">Chemistry:</label>
+                <input type="number" id="chmistry" placeholder="Enter Your Score">
+                <label for="">Physical:</label>
+                <input type="number" id="physical" placeholder="Enter Your Score">
+                <label for="">English:</label>
+                <input type="number" id="english" placeholder="Enter Your Score">
+                <label for="">History:</label>
+                <input type="number" id="history" placeholder="Enter Your Score">
+                <label for="">Khmer:</label>
+                <input type="number" id="khmer" placeholder="Enter Your Score">
+                <input type="button" id="btn" value="Go">
 
-    </div>
+            </div>
         </div>
         <div class="full-container-right">
-             <div id="result-container">
-                  <table id="table-result" style="text-align: center;">
-                     <tr>
-                            <th>Name</th>
-                            <th colspan="2">Null</th>
-                            <th rowspan="8" id="t_result">Null</th>
-                        </tr>
-                        <tr>
-                            <td style="text-align: left;">Math</td>
-                            <td>0</td>
-                            <td>Null</td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: left;">Biology</td>
-                            <td>0</td>
-                            <td>Null</td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: left;">Chemistary</td>
-                            <td>0</td>
-                            <td>Null</td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: left;">Physical</td>
-                            <td>0</td>
-                            <td>Null</td>
-                        </tr>
-                    
-                        <tr>
-                            <td style="text-align: left;">English</td>
-                            <td>0</td>
-                            <td>Null</td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: left;">History</td>
-                            <td>0</td>
-                            <td>Null</td>
-                        </tr>
-                        <tr>
-                            <td style="text-align: left;">Khmer</td>
-                            <td>0</td>
-                            <td>Null</td>
-                        </tr>       
-                 </table>
-                 <div class="btn1">
-                 <input onclick="clearform1()" type="button" value="Clear">
-                 <input type="button" value="Save" onclick="savestudent()">
-                 </div>
-                 
+            <div id="result-container">
+                <table id="table-result" style="text-align: center;">
+                    <tr>
+                        <th>Name</th>
+                        <th colspan="2">Null</th>
+                        <th rowspan="8" id="t_result">Null</th>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;">Math</td>
+                        <td>0</td>
+                        <td>Null</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;">Biology</td>
+                        <td>0</td>
+                        <td>Null</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;">Chemistary</td>
+                        <td>0</td>
+                        <td>Null</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;">Physical</td>
+                        <td>0</td>
+                        <td>Null</td>
+                    </tr>
+
+                    <tr>
+                        <td style="text-align: left;">English</td>
+                        <td>0</td>
+                        <td>Null</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;">History</td>
+                        <td>0</td>
+                        <td>Null</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;">Khmer</td>
+                        <td>0</td>
+                        <td>Null</td>
+                    </tr>
+                </table>
+                <div class="btn1">
+                    <input onclick="clearform1()" type="button" value="Clear">
+                    <input type="button" value="Save" onclick="savestudent()">
+                </div>
+
             </div>
-            <div border="1"  id="result-total-table" >
+            <div border="1" id="result-total-table">
                 <table>
-                    <tr> 
+                    <tr>
                         <th>No</th>
                         <th>Name:</th>
                         <th>Total Score</th>
@@ -101,15 +278,16 @@
                         <td>300</td>
                         <td>A</td>-->
                     </tbody>
-    
+
                 </table>
             </div>
         </div>
     </div>
     <script src="index.js"></script>
-    
 
 
-    
+
+
 </body>
+
 </html>
